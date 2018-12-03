@@ -1,0 +1,70 @@
+-- tables
+-- Table: avaliacao
+CREATE TABLE avaliacao (
+    id serial  NOT NULL,
+    data date  NOT NULL,
+    condicao_adequada boolean  NOT NULL,
+    prumo_adequada boolean  NOT NULL,
+    cabeamento_adequada boolean  NOT NULL,
+    nota smallint  NOT NULL,
+    postes_etiqueta varchar(5)  NOT NULL,
+    CONSTRAINT avaliacao_pk PRIMARY KEY (id)
+);
+
+-- Table: material
+CREATE TABLE material (
+    id int  NOT NULL,
+    material varchar(8)  NOT NULL,
+    CONSTRAINT material_pk PRIMARY KEY (id)
+);
+
+-- Table: poste
+CREATE TABLE poste (
+    etiqueta char(5)  NOT NULL,
+    latitude decimal(4,2)  NOT NULL,
+    longitude decimal(4,2)  NOT NULL,
+    material_id int  NOT NULL,
+    CONSTRAINT poste_pk PRIMARY KEY (etiqueta)
+);
+
+-- foreign keys
+-- Reference: avaliacao_postes (table: avaliacao)
+ALTER TABLE avaliacao ADD CONSTRAINT avaliacao_postes
+    FOREIGN KEY (postes_etiqueta)
+    REFERENCES poste (etiqueta)  
+;
+
+-- Reference: poste_material (table: poste)
+ALTER TABLE poste ADD CONSTRAINT poste_material
+    FOREIGN KEY (material_id)
+    REFERENCES material (id)  
+;
+
+ALTER TABLE avaliacao ALTER COLUMN nota SET NOT NULL;
+ALTER TABLE poste ADD COLUMN id serial;
+
+UPDATE avaliacao SET nota = 0 WHERE id = 3;
+
+select * from material;
+select * from poste;
+select * from avaliacao order by id ASC;
+
+-- Select Poste
+SELECT etiqueta, latitude, longitude, material.material FROM poste JOIN material ON material.id = poste.material_id;
+
+-- Select Avaliacao
+	SELECT avaliacao.id, TO_CHAR(avaliacao.data, 'DD/MM/YYYY') as data, condicao_adequada, prumo_adequada, cabeamento_adequada, nota, postes_etiqueta 
+	FROM avaliacao 
+	JOIN poste 
+	ON avaliacao.postes_etiqueta = poste.etiqueta;
+
+-- Select Postes NÃO Avaliados em Período
+SELECT postes_etiqueta
+FROM avaliacao
+WHERE avaliacao.data NOT BETWEEN '2018-12-10' and '2018-12-11';
+
+-- Select Nota Postes
+SELECT SUM(avaliacao.nota) as nota_geral, COUNT(avaliacao.nota)*3 as nota_maxima FROM avaliacao;
+
+
+-- End of file.
