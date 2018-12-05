@@ -38,6 +38,7 @@ $(document).ready(function () {
         }).done(function (tabela) {
 
             $('#erro').removeClass('alert-danger').removeClass('alert-warning').addClass('alert-success').show().text(tabela);
+            $('#erro').delay(1000).fadeOut();
             $('#listar-postes').click();
 			
 
@@ -46,6 +47,7 @@ $(document).ready(function () {
             console.log(erro.responseText);
             aviso = "Erro ao executar o comando no banco de dados.";
             $('#erro').removeClass('alert-success').removeClass('alert-warning').addClass('alert-danger').show().text(aviso);
+            $('#erro').delay(1000).fadeOut();
 
         })
 
@@ -129,9 +131,11 @@ $(document).ready(function () {
 
                     });
                     $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
+                    $('#erro').delay(1000).fadeOut();
                 } else {
                     if (tabela.linhas == 0) {
                         $('#erro').show().text('0 resultados para este periodo!');
+                        $('#erro').delay(1000).fadeOut();
                     }
                     ;
                     console.log(tabela.erro);
@@ -139,6 +143,7 @@ $(document).ready(function () {
             });
         }else {
             $('#erro').show().text('Os campos de data nao podem estar vazios!');
+            $('#erro').delay(1000).fadeOut();
         }
     });
 
@@ -181,9 +186,11 @@ $(document).ready(function () {
 
                     });
                     $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
+                    $('#erro').delay(1000).fadeOut();
                 } else {
                     if (tabela.linhas == 0) {
                         $('#erro').show().text('0 resultados para este periodo!');
+                        $('#erro').delay(1000).fadeOut();
                     }
                     console.log(tabela.erro)
                 }
@@ -191,6 +198,7 @@ $(document).ready(function () {
             });
         }else{
                 $('#erro').show().text('Os campos de data nao podem estar vazios!');
+            $('#erro').delay(1000).fadeOut();
             }
     });
 
@@ -233,9 +241,11 @@ $(document).ready(function () {
 
                     });
                     $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
+                    $('#erro').delay(1000).fadeOut();
                 } else {
                     if (tabela.linhas == 0) {
                         $('#erro').show().text('0 resultados para este periodo!');
+                        $('#erro').delay(1000).fadeOut();
                     }
                     ;
                     console.log(tabela.erro);
@@ -243,6 +253,7 @@ $(document).ready(function () {
             });
         }else {
             $('#erro').show().text('Os campos de data nao podem estar vazios!');
+            $('#erro').delay(1000).fadeOut();
         }
     });
 
@@ -272,6 +283,7 @@ $(document).ready(function () {
         }).done(function (retorno) {
 
             $('#erro').removeClass('alert-danger').removeClass('alert-warning').addClass('alert-success').show().text(retorno.toString());
+            $('#erro').delay(1000).fadeOut();
 
         }).fail(function () {
 
