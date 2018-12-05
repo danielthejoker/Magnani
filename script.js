@@ -83,6 +83,8 @@ $(document).ready(function () {
                 });
 
             });
+            $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
+            $('#erro').delay(2000).fadeOut();
 
         }).fail(function (tabela) {
 
@@ -131,11 +133,11 @@ $(document).ready(function () {
 
                     });
                     $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
-                    $('#erro').delay(1000).fadeOut();
+                    $('#erro').delay(2000).fadeOut();
                 } else {
                     if (tabela.linhas == 0) {
                         $('#erro').show().text('0 resultados para este periodo!');
-                        $('#erro').delay(1000).fadeOut();
+                        $('#erro').delay(2000).fadeOut();
                     }
                     ;
                     console.log(tabela.erro);
@@ -143,7 +145,7 @@ $(document).ready(function () {
             });
         }else {
             $('#erro').show().text('Os campos de data nao podem estar vazios!');
-            $('#erro').delay(1000).fadeOut();
+            $('#erro').delay(2000).fadeOut();
         }
     });
 
@@ -186,11 +188,11 @@ $(document).ready(function () {
 
                     });
                     $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
-                    $('#erro').delay(1000).fadeOut();
+                    $('#erro').delay(2000).fadeOut();
                 } else {
                     if (tabela.linhas == 0) {
                         $('#erro').show().text('0 resultados para este periodo!');
-                        $('#erro').delay(1000).fadeOut();
+                        $('#erro').delay(2000).fadeOut();
                     }
                     console.log(tabela.erro)
                 }
@@ -198,7 +200,7 @@ $(document).ready(function () {
             });
         }else{
                 $('#erro').show().text('Os campos de data nao podem estar vazios!');
-            $('#erro').delay(1000).fadeOut();
+            $('#erro').delay(2000).fadeOut();
             }
     });
 
@@ -241,11 +243,11 @@ $(document).ready(function () {
 
                     });
                     $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
-                    $('#erro').delay(1000).fadeOut();
+                    $('#erro').delay(2000).fadeOut();
                 } else {
                     if (tabela.linhas == 0) {
                         $('#erro').show().text('0 resultados para este periodo!');
-                        $('#erro').delay(1000).fadeOut();
+                        $('#erro').delay(2000).fadeOut();
                     }
                     ;
                     console.log(tabela.erro);
@@ -253,7 +255,7 @@ $(document).ready(function () {
             });
         }else {
             $('#erro').show().text('Os campos de data nao podem estar vazios!');
-            $('#erro').delay(1000).fadeOut();
+            $('#erro').delay(2000).fadeOut();
         }
     });
 
@@ -283,7 +285,7 @@ $(document).ready(function () {
         }).done(function (retorno) {
 
             $('#erro').removeClass('alert-danger').removeClass('alert-warning').addClass('alert-success').show().text(retorno.toString());
-            $('#erro').delay(1000).fadeOut();
+            $('#erro').delay(2000).fadeOut();
 
         }).fail(function () {
 
