@@ -83,8 +83,6 @@ $(document).ready(function () {
                 });
 
             });
-            $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
-            $('#erro').delay(2000).fadeOut();
 
         }).fail(function (tabela) {
 
