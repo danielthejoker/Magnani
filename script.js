@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
     var aviso = "";
-    var nota = 3;
 
     $('#postes').click(function () {
 
@@ -91,6 +90,10 @@ $(document).ready(function () {
 
     });
     $('#pesquisar-avaliados').click(function () {
+        $('#tabela-notas').hide();
+        $('#nota_postes').hide();
+        $('#tabela-nao-avaliacoes').hide();
+        $('#tabela-postes-nao-avaliados').hide();
         if ($('#data_inicial').val()!="" && $('#data_final')!= "") {
             $.ajax({
 
@@ -139,6 +142,10 @@ $(document).ready(function () {
     });
 
     $('#listar-postes-nao-avaliados').click(function () {
+        $('#tabela-notas').hide();
+        $('#tabela-avaliacoes').hide();
+        $('#nota_postes').hide();
+        $('#avaliacoes-postes').hide();
         if ($('#data_inicial').val()!="" && $('#data_final')!= "") {
             $.ajax({
 
@@ -187,6 +194,10 @@ $(document).ready(function () {
     });
 
     $('#relatorio-notas').click(function () {
+        $('#tabela-avaliacoes').hide();
+        $('#avaliacoes-postes').hide();
+        $('#tabela-nao-avaliacoes').hide();
+        $('#tabela-postes-nao-avaliados').hide();
         if ($('#data_inicial').val()!="" && $('#data_final')!= "") {
             $.ajax({
 
@@ -239,18 +250,10 @@ $(document).ready(function () {
         $fisica = $('input[name=condicao-fisica]:checked').val();
         $cabeamento = $('input[name=condicao-cabeamento]:checked').val();
         $prumo = $('input[name=condicao-prumo]:checked').val();
-
-        if ($fisica==false) {
-            nota--
-        }
-        if ($cabeamento==false) {
-            nota--
-        }
-        if(!$prumo==false) {
-            nota--
-        }
-
-
+        var nota=3;
+        if($fisica=='false'){nota--}
+        if($cabeamento=='false'){nota--}
+        if($prumo=='false'){nota--}
         $.ajax({
 
             url: 'codigo.php',

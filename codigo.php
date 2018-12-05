@@ -232,9 +232,8 @@ if ($_POST) {
                     "prumo" => $_POST['prumo'],
                     "nota" => $_POST['nota']
                 );
-
-                $insert = "INSERT INTO avaliacao(data, condicao_adequada, prumo_adequada, cabeamento_adequada, nota, postes_etiqueta)
-	                        VALUES ('{$sql['data']}', {$sql['fisica']}, {$sql['cabeamento']}, {$sql['prumo']}, {$sql['nota']}, '{$sql['etiqueta']}')";
+                $insert = "INSERT INTO avaliacao(data, condicao_adequada, prumo_adequada, cabeamento_adequada, postes_etiqueta, nota)
+	                        VALUES ('{$sql['data']}', '{$sql['fisica']}', '{$sql['prumo']}', '{$sql['cabeamento']}', '{$sql['etiqueta']}',{$sql['nota']})";
                 $result = pg_query($db, $insert);
                 $tabela = pg_fetch_all($result);
 
