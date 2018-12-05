@@ -39,6 +39,7 @@ $(document).ready(function () {
 
             $('#erro').removeClass('alert-danger').removeClass('alert-warning').addClass('alert-success').show().text(tabela);
             $('#listar-postes').click();
+			
 
         }).fail(function (erro) {
 

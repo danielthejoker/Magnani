@@ -93,7 +93,7 @@ if ($_POST) {
                 $final = $_POST['final'];
                 $sql = "SELECT postes_etiqueta, TO_CHAR(avaliacao.data, 'DD/MM/YYYY') as data, poste.latitude, poste.longitude, material.material
                         FROM avaliacao join poste on poste.etiqueta=avaliacao.postes_etiqueta join material on material.id = poste.material_id
-                        WHERE avaliacao.data NOT BETWEEN '{$inicial}' and '$final';";
+			WHERE avaliacao.data NOT BETWEEN '{$inicial}' and '{$final}' order by data desc;";
                 $select = pg_query($db, $sql);
                 $tabela = pg_fetch_all($select);
                 $rows = pg_num_rows($select);
@@ -138,7 +138,7 @@ if ($_POST) {
                 $inicial = $_POST['inicial'];
                 $final = $_POST['final'];
                 $sql = "SELECT avaliacao.id, TO_CHAR(avaliacao.data, 'DD/MM/YYYY') as data, case when condicao_adequada = true then 'Adequado' else 'Inadequado' END AS Condicao_Adequada, case when prumo_adequada = true then 'Adequado' else 'Inadequado' END AS Prumo_Adequado, case when cabeamento_adequada = true then 'Adequado' else 'Inadequado' END AS Cabeamento_Adequado, nota, postes_etiqueta 
-    	                FROM avaliacao JOIN poste ON avaliacao.postes_etiqueta = poste.etiqueta where avaliacao.data between '{$inicial}' and '{$final}';";
+    	                FROM avaliacao JOIN poste ON avaliacao.postes_etiqueta = poste.etiqueta where avaliacao.data between '{$inicial}' and '{$final}' order by id desc;";
                 $select = pg_query($db, $sql);
                 $tabela = pg_fetch_all($select);
                 $rows = pg_num_rows($select);
