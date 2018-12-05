@@ -43,8 +43,6 @@ ALTER TABLE poste ADD CONSTRAINT poste_material
 ALTER TABLE avaliacao ALTER COLUMN nota SET NOT NULL;
 ALTER TABLE poste ADD COLUMN id serial;
 
-UPDATE avaliacao SET nota = 0 WHERE id = 3;
-
 select * from material;
 select * from poste;
 select * from avaliacao order by id ASC;
@@ -53,10 +51,8 @@ select * from avaliacao order by id ASC;
 SELECT etiqueta, latitude, longitude, material.material FROM poste JOIN material ON material.id = poste.material_id;
 
 -- Select Avaliacao
-	SELECT avaliacao.id, TO_CHAR(avaliacao.data, 'DD/MM/YYYY') as data, condicao_adequada, prumo_adequada, cabeamento_adequada, nota, postes_etiqueta 
-	FROM avaliacao 
-	JOIN poste 
-	ON avaliacao.postes_etiqueta = poste.etiqueta;
+	SELECT avaliacao.id, TO_CHAR(avaliacao.data, 'DD/MM/YYYY') as data, case when condicao_adequada = true then 'Adequado' else 'Inadequado' END AS Condicao_Adequada, case when prumo_adequada = true then 'Adequado' else 'Inadequado' END AS Prumo_Adequado, case when cabeamento_adequada = true then 'Adequado' else 'Inadequado' END AS Cabeamento_Adequado, nota, postes_etiqueta
+        	                FROM avaliacao JOIN poste ON avaliacao.postes_etiqueta = poste.etiqueta where avaliacao.data between '2018-12-01' and '2018-12-09'
 
 -- Select Postes NÃO Avaliados em Período
 SELECT postes_etiqueta

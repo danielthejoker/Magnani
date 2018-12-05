@@ -2,12 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f7fdfbe-2b52-462e-b015-bec25d2efaeb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SQL.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codigo.php" beforeDir="false" afterPath="$PROJECT_DIR$/codigo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/.jshintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/.ruby-version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/Gruntfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/ISSUE_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/component.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/deploy.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/dist/jquery.mask.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/dist/jquery.mask.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/package.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/src/jquery.mask.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/jquery.mask.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/qunit.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/qunit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/sinon-1.10.3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/sinon-qunit-1.0.0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/sinon-qunit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/test-for-jquery-1.11.1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/test-for-jquery-1.7.2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/test-for-jquery-1.8.3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/test-for-jquery-1.9.1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/test-for-jquery-2.1.1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/test-for-jquery-3.0.0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/test-for-zepto.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/zepto/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/zepto/event.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mask/test/zepto/zepto.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,49 +149,60 @@
         <counts>
           <entry key="php" value="1" />
           <entry key="sql" value="1" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PHP" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="111" />
-          <entry key="js" value="33" />
-          <entry key="php" value="6" />
-          <entry key="txt" value="18" />
+          <entry key="html" value="499" />
+          <entry key="js" value="749" />
+          <entry key="php" value="576" />
+          <entry key="txt" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="ECMAScript 6" value="1" />
-          <entry key="HTML" value="110" />
-          <entry key="JavaScript" value="33" />
-          <entry key="PHP" value="6" />
-          <entry key="PLAIN_TEXT" value="18" />
+          <entry key="HTML" value="498" />
+          <entry key="JavaScript" value="749" />
+          <entry key="PHP" value="544" />
+          <entry key="PLAIN_TEXT" value="51" />
+          <entry key="SQL" value="32" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="124" column="160" lean-forward="true" selection-start-line="124" selection-start-column="160" selection-end-line="124" selection-end-column="160" />
+            <state relative-caret-position="306">
+              <caret line="243" column="38" selection-start-line="243" selection-start-column="27" selection-end-line="243" selection-end-column="38" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#2;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#3;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#4;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="262">
+              <caret line="249" column="18" selection-start-line="249" selection-start-column="18" selection-end-line="249" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -162,8 +210,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/codigo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="104" column="42" selection-start-line="104" selection-start-column="42" selection-end-line="104" selection-end-column="42" />
+            <state relative-caret-position="95">
+              <caret line="226" column="29" selection-start-line="226" selection-start-column="29" selection-end-line="226" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SQL.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="50" column="115" selection-start-line="50" selection-start-column="84" selection-end-line="50" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -176,9 +233,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/SQL.txt" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/codigo.php" />
         <option value="$PROJECT_DIR$/script.js" />
-        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -187,11 +245,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/mask/package.json" />
-    </packageJsonPaths>
   </component>
   <component name="PhpServers">
     <servers />
@@ -204,6 +257,12 @@
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
@@ -233,12 +292,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544005769375</updated>
-      <workItem from="1544005774757" duration="2786000" />
+      <workItem from="1544005774757" duration="16755000" />
     </task>
+    <task id="LOCAL-00001" summary="adicao de arquivos e edicao">
+      <created>1544008751594</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1544008751594</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2786000" />
+    <option name="totallyTimeSpent" value="16755000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -257,7 +324,7 @@
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Database Changes" weight="0.32923076" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -280,28 +347,47 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adicao de arquivos e edicao" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicao de arquivos e edicao" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6eaf724a-e803-4189-bc86-5566af57ed2f/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/codigo.php">
+    <entry file="file://$PROJECT_DIR$/SQL.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="104" column="42" selection-start-line="104" selection-start-column="42" selection-end-line="104" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="268">
+          <caret line="50" column="115" selection-start-line="50" selection-start-column="84" selection-end-line="50" selection-end-column="115" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="243" column="38" selection-start-line="243" selection-start-column="27" selection-end-line="243" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#2;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#3;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#4;n#form#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codigo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="226" column="29" selection-start-line="226" selection-start-column="29" selection-end-line="226" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
-          <caret line="124" column="160" lean-forward="true" selection-start-line="124" selection-start-column="160" selection-end-line="124" selection-end-column="160" />
+          <caret line="249" column="18" selection-start-line="249" selection-start-column="18" selection-end-line="249" selection-end-column="18" />
         </state>
       </provider>
     </entry>

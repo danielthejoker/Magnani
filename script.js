@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     var aviso = "";
+    var nota = 3;
 
     $('#postes').click(function () {
 
@@ -89,27 +90,166 @@ $(document).ready(function () {
         });
 
     });
+    $('#pesquisar-avaliados').click(function () {
+        if ($('#data_inicial').val()!="" && $('#data_final')!= "") {
+            $.ajax({
+
+                url: "codigo.php",
+                method: "post",
+                data: {
+                    acao: "listar_avaliados",
+                    inicial: $('#data_inicial').val(),
+                    final: $('#data_final').val()
+                },
+
+                dataType: "json",
+
+            }).done(function (tabela) {
+                if (tabela.linhas > 0) {
+                    $('#tabela-avaliacoes').show();
+                    $('#avaliacoes-postes').show();
+                }
+                if (tabela.falha == false && tabela.linhas > 0) {
+
+                    $('#tabela-avaliacoes').find('tbody').empty();
+
+                    $.each(tabela.tabela, function (i, obj) {
+
+                        linha = $('<tr></tr>');
+
+                        $.each(obj, function (campo, valor) {
+                            linha.append('<td>' + valor + '</td>');
+                            $('#tabela-avaliacoes').find('tbody').append(linha);
+
+                        });
+
+                    });
+                    $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
+                } else {
+                    if (tabela.linhas == 0) {
+                        $('#erro').show().text('0 resultados para este periodo!');
+                    }
+                    ;
+                    console.log(tabela.erro);
+                }
+            });
+        }else {
+            $('#erro').show().text('Os campos de data nao podem estar vazios!');
+        }
+    });
+
+    $('#listar-postes-nao-avaliados').click(function () {
+        if ($('#data_inicial').val()!="" && $('#data_final')!= "") {
+            $.ajax({
+
+                url: "codigo.php",
+                method: "post",
+                data: {
+                    acao: "listar_nao_avaliados",
+                    inicial: $('#data_inicial').val(),
+                    final: $('#data_final').val()
+                },
+
+                dataType: "json",
+
+            }).done(function (tabela) {
+                if (tabela.linhas > 0) {
+                    $('#tabela-nao-avaliacoes').show();
+                    $('#tabela-postes-nao-avaliados').show();
+                }
+                if (tabela.falha == false && tabela.linhas > 0) {
+
+                    $('#tabela-postes-nao-avaliados').find('tbody').empty();
+
+                    $.each(tabela.tabela, function (i, obj) {
+
+                        linha = $('<tr></tr>');
+
+                        $.each(obj, function (campo, valor) {
+                            linha.append('<td>' + valor + '</td>');
+                            $('#tabela-postes-nao-avaliados').find('tbody').append(linha);
+
+                        });
+
+                    });
+                    $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
+                } else {
+                    if (tabela.linhas == 0) {
+                        $('#erro').show().text('0 resultados para este periodo!');
+                    }
+                    console.log(tabela.erro)
+                }
+
+            });
+        }else{
+                $('#erro').show().text('Os campos de data nao podem estar vazios!');
+            }
+    });
+
+    $('#relatorio-notas').click(function () {
+        if ($('#data_inicial').val()!="" && $('#data_final')!= "") {
+            $.ajax({
+
+                url: "codigo.php",
+                method: "post",
+                data: {
+                    acao: "exibir_notas",
+                    inicial: $('#data_inicial').val(),
+                    final: $('#data_final').val()
+                },
+
+                dataType: "json",
+
+            }).done(function (tabela) {
+                if (tabela.linhas > 0) {
+                    $('#nota_postes').show();
+                    $('#tabela-notas').show();
+                }
+                if (tabela.falha == false && tabela.linhas > 0) {
+
+                    $('#nota_postes').find('tbody').empty();
+
+                    $.each(tabela.tabela, function (i, obj) {
+
+                        linha = $('<tr></tr>');
+
+                        $.each(obj, function (campo, valor) {
+                            linha.append('<td>' + valor + '</td>');
+                            $('#nota_postes').find('tbody').append(linha);
+
+                        });
+
+                    });
+                    $('#erro').removeClass('alert-danger').addClass('alert-success').show().text('Listagem concluida!');
+                } else {
+                    if (tabela.linhas == 0) {
+                        $('#erro').show().text('0 resultados para este periodo!');
+                    }
+                    ;
+                    console.log(tabela.erro);
+                }
+            });
+        }else {
+            $('#erro').show().text('Os campos de data nao podem estar vazios!');
+        }
+    });
 
     $('#cadastrar-avaliacao').click(function () {
 
         $fisica = $('input[name=condicao-fisica]:checked').val();
         $cabeamento = $('input[name=condicao-cabeamento]:checked').val();
         $prumo = $('input[name=condicao-prumo]:checked').val();
-        $nota = 3;
 
-        if (!$fisica) {
-
-           $nota--;
-
-        } else if (!$cabeamento) {
-
-            $nota--;
-
-        } else if (!$prumo) {
-
-            $nota--;
-
+        if ($fisica==false) {
+            nota--
         }
+        if ($cabeamento==false) {
+            nota--
+        }
+        if(!$prumo==false) {
+            nota--
+        }
+
 
         $.ajax({
 
@@ -122,12 +262,12 @@ $(document).ready(function () {
                 fisica: $fisica,
                 cabeamento: $cabeamento,
                 prumo: $prumo,
-                nota: $nota
+                nota: nota
             }
 
         }).done(function (retorno) {
 
-            $('#erro').removeClass('alert-danger').removeClass('alert-warning').addClass('alert-success').show().text(retorno);
+            $('#erro').removeClass('alert-danger').removeClass('alert-warning').addClass('alert-success').show().text(retorno.toString());
 
         }).fail(function () {
 
