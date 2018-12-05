@@ -117,9 +117,8 @@ $(document).ready(function () {
             method: 'post',
             data: {
                 acao: "cadastrar-avaliacao",
-                id_avaliacao: $('#id-avaliacao').val(),
-                etiqueta: $('#etiqueta_poste'),
-                data: $('#data-avaliacao'),
+                etiqueta: $('#etiqueta_poste').val(),
+                data: $('#data-avaliacao').val(),
                 fisica: $fisica,
                 cabeamento: $cabeamento,
                 prumo: $prumo,

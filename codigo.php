@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+ $stringConexao = isset($_SESSION['conexao'])?$_SESSION['conexao']:false;
 if ($_POST) {
 
     $acao = $_POST['acao'];
@@ -15,7 +16,7 @@ if ($_POST) {
                 "material" => $_POST['material']
             );
 
-            $stringConexao = "host=localhost port=5432 dbname=magnaniinspections user=poli password=poli";
+            $stringConexao = "host=localhost port=5432 dbname=MagnaniInspections user=postgres password=123456";
             $db = pg_connect($stringConexao);
 
             if (!$db) {
@@ -37,7 +38,7 @@ if ($_POST) {
                     break;
 
                 } else {
-
+                    $_SESSION['conexao'] = $stringConexao;
                     $erro = "Poste de etiqueta {$sql['etiqueta']} cadastrado com sucesso!";
                     echo json_encode($erro);
                     break;
@@ -48,7 +49,7 @@ if ($_POST) {
 
         case "listar":
 
-            $stringConexao = "host=localhost port=5432 dbname=magnaniinspections user=poli password=poli";
+            $stringConexao = $_SESSION['conexao'];
             $db = pg_connect($stringConexao);
 
             if (!$db) {
@@ -58,7 +59,7 @@ if ($_POST) {
 
             } else {
 
-                $sql = "SELECT poste.id, etiqueta, latitude, longitude, material.material FROM poste JOIN material ON material.id = poste.material_id ORDER BY poste.id DESC";
+                $sql = "SELECT poste.id, etiqueta, latitude, longitude, material.material from poste join material on material.id=poste.material_id order by poste.id desc";
                 $select = pg_query($db, $sql);
                 $tabela = pg_fetch_all($select);
 
@@ -69,7 +70,7 @@ if ($_POST) {
 
         case "cadastrar-avaliacao":
 
-            $stringConexao = "host=localhost port=5432 dbname=magnaniinspections user=poli password=poli";
+            $stringConexao = $_SESSION['conexao'];
             $db = pg_connect($stringConexao);
 
             if (!$db) {
@@ -89,8 +90,8 @@ if ($_POST) {
                     "nota" => $_POST['nota']
                 );
 
-                $insert = "INSERT INTO avaliacao(id, data, condicao_adequada, prumo_adequada, cabeamento_adequada, nota, postes_etiqueta)
-	                        VALUES ({$sql['id']}, {$sql['data']}, {$sql['fisica']}, {$sql['cabeamento']}, {$sql['prumo']}, {$sql['nota']}, {$sql['etiqueta']})";
+                $insert = "INSERT INTO avaliacao(data, condicao_adequada, prumo_adequada, cabeamento_adequada, nota, postes_etiqueta)
+	                        VALUES ('{$sql['data']}', {$sql['fisica']}, {$sql['cabeamento']}, {$sql['prumo']}, {$sql['nota']}, '{$sql['etiqueta']}')";
                 $result = pg_query($db, $insert);
 
                 if (!$result) {
@@ -101,7 +102,7 @@ if ($_POST) {
 
                 } else {
 
-                    $erro = "Avaliação de ID {$sql['id']} cadastrada com sucesso";
+                    $erro = "Avaliação de cadastrada com sucesso";
                     echo json_encode($erro);
                     break;
 

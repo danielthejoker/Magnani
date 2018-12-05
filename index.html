@@ -7,6 +7,9 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="mask/src/jquery.mask.js">
+    <link rel="stylesheet" href="mask/package.js">
+    <link rel="stylesheet" href="mask/dist/jquery.mask.js">
 </head>
 <body>
 
@@ -46,7 +49,7 @@
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-5">
                             <label for="etiqueta">Etiqueta</label>
-                            <input type="text" class="form-control" id="etiqueta" name="etiqueta" placeholder="Etiqueta: AAAAA" required>
+                            <input type="text" class="form-control" id="etiqueta" name="etiqueta" pattern="([a-zA-Z0-9]{5})" placeholder="Etiqueta: AAAAA" required>
                         </div>
                         <div class="form-group col-md-5">
                             <label for="latitude">Latitude</label>
@@ -116,17 +119,13 @@
 
                 <div class="card-body">
                     <div class="form-row justify-content-center">
-                        <div class="form-group col-md-3">
-                            <label>ID da avaliação</label>
-                            <input type="number" class="form-control" id="id-avaliacao" name="id-avaliacao" placeholder="ID" required>
-                        </div>
 
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-5">
                             <label>Etiqueta do poste</label>
-                            <input type="text" class="form-control" id="etiqueta_poste" name="id-avaliacao" placeholder="Etiqueta: AAAAA" required>
+                            <input type="text" class="form-control" id="etiqueta_poste" name="id-avaliacao" pattern="[a-zA-Z0-9]{5}" data-mask="AAAAA" required>
                         </div>
 
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-5">
                             <label>Data da avaliação</label>
                             <input type="date" class="form-control" id="data-avaliacao" name="data-avaliacao" required>
                         </div>
@@ -243,6 +242,18 @@
     </div>
 
 </div>
-
+<script>
+    $(document).ready(function() {
+        $('#etiqueta').mask("aaa.aa", {
+            translation: {
+                ',': {
+                    pattern: /[,.]/,
+                    fallback: '.'
+                },
+                placeholder: "__/__/____"
+            }
+        });
+    });
+</script>
 </body>
 </html>
